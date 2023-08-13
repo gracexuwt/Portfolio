@@ -4,6 +4,7 @@
 
 // Component Imports
 import MainHead from '../components/MainHead.astro';
+import { SEO } from "astro-seo";
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
@@ -17,6 +18,10 @@ const { title, description } = Astro.props;
 
 <html lang="en">
 	<head>
+		<SEO
+      title="Grace's Portfolio"
+      description="Portfolio of a web developer, game developer, software engineer, and designer. Looking for new opportunities."
+    />
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
