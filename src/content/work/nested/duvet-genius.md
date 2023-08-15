@@ -9,6 +9,12 @@ tags:
   - Design
   - Game Dev
   - BCI Technology
+tech_stack:
+  stuff
+link:
+  link
+duration:
+  duration
 ---
 
 Watolink is the University of Waterloo’s Neurotech design team, and our team develops BCI hardware, applications, and sensor technology using EEG signal analysis.
