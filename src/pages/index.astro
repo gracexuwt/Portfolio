@@ -35,26 +35,25 @@ const projects = (await getCollection('work'))
 					align="start"
 				>
 					<div class="typewriter">
-						<a class="fontstyle">Software engineer. Web/Game developer. Digital designer.</a>
+						<a class="fontstyle">Software engineer. Web & Game developer. Digital designer.</a>
 					</div>
 				</Hero>
 
 				<img
-					alt="Artsy Pic"
+					alt="My universe"
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="/assets/portrait.png"
 				/>
 			</header>
 
-			<Skills />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>My Projects</h3>
+					<p>Have a look at some of my featured works!</p>
 				</header>
 
 				<div class="gallery">
@@ -90,12 +89,12 @@ const projects = (await getCollection('work'))
 		font-weight: bold;
 	}
 	.typewriter {
-	overflow: hidden;
-	white-space: nowrap;
-	border-right: 0.15em solid #000;
-	font-size: 24px;
-	animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-	animation-fill-mode: forwards; /* Keeps the last frame of typing animation */
+		overflow: hidden;
+		white-space: nowrap;
+		border-right: 0.15em solid #000;
+		font-size: 91%;
+		animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+		animation-fill-mode: forwards; /* Keeps the last frame of typing animation */
 	}
 
 	@keyframes typing {
@@ -103,7 +102,7 @@ const projects = (await getCollection('work'))
 		width: 0;
 	}
 	to {
-		width: 98%;
+		width: 100%;
 	}
 	}
 
@@ -132,9 +131,17 @@ const projects = (await getCollection('work'))
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		animation: floating 3s ease-in-out infinite;
 	}
 
+	@keyframes floating {
+		0%, 100% {
+		transform: translateY(0);
+		}
+		50% {
+		transform: translateY(20px);
+		}
+	}
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
@@ -154,6 +161,7 @@ const projects = (await getCollection('work'))
 			border-radius: 4.5rem;
 			object-fit: cover;
 		}
+		
 	}
 
 	/* ====================================================== */
