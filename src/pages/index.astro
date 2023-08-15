@@ -30,19 +30,17 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hi, I'm Grace Xu."
+					tagline="I learn, code, and create to turn ideas into real life projects."
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+					<div class="typewriter">
+						<a class="fontstyle">Software engineer. Web/Game developer. Digital designer.</a>
 					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Artsy Pic"
 					width="480"
 					height="620"
 					src="/assets/portrait.jpg"
@@ -87,6 +85,37 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
+	.fontstyle {
+		color:var(--accent-regular);
+		font-weight: bold;
+	}
+	.typewriter {
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 0.15em solid #000;
+	font-size: 24px;
+	animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+	animation-fill-mode: forwards; /* Keeps the last frame of typing animation */
+	}
+
+	@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 98%;
+	}
+	}
+
+	@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #000;
+	}
+	}
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -203,28 +232,6 @@ const projects = (await getCollection('work'))
 
 		.cta {
 			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
 		}
 	}
 </style>
