@@ -10,11 +10,11 @@ tags:
   - Game Dev
   - BCI Technology
 tech_stack:
-  stuff
+  Unity C#, Unity Animator, Brainflow Python, Neurosity API and crowns, EEG hardware
 link:
-  link
+  https://github.com/WATOLINK/bci-gaming
 duration:
-  duration
+  March 2023 - Ongoing
 ---
 
 Watolink is the University of Waterloo’s Neurotech design team, and our team develops BCI hardware, applications, and sensor technology using EEG signal analysis.

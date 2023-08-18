@@ -3,7 +3,6 @@ import { CollectionEntry, getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
@@ -42,12 +41,16 @@ const { Content } = await entry.render();
 				</Hero>
 			</header>
 			<main class="main">
-				<div class="img-container">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-					<div class="new-section">
-						<a>hello</a>
+				<div>
+					<div class="img-container">
+					  {entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					</div>
-				</div>
+					<div class="new-section">
+					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">{entry.data.tech_stack}</a></div>
+					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">{entry.data.duration}</a></div>
+					  <div><a class="bolden">Links: </a></div><div class="gap"><a href={entry.data.link} class="regular"><Icon icon='github-logo'/>GitHub</a></div>
+					</div>
+				  </div>
 				<div class="content">
 					<Content />
 				</div>
@@ -89,22 +92,33 @@ const { Content } = await entry.render();
 	display: flex;
 	align-items: flex-start;
 	}
-
+	.bolden {
+		color: var(--gray-200);
+		font-weight: bold;
+	}
+	.regular {
+		color: var(--accent-regular);
+	}
 	.new-section {
+		top: 20%;
 		flex: 1; 
-		max-width: 65ch;
+		width: 95%;
 	}
 	.img-container {
-		margin-right: 20px;
 		display: grid;
 		justify-content: center; 
 		align-items: center; 
-		width: 60%;
-		height: 60%; 
+		width: 93%;
+		height: 93%; 
 		margin-right: 20px;
+		margin-bottom: 20px;
 	}
-
+	.gap {
+		margin-bottom: 10px;
+	}
 	.content {
+		justify-content: center; 
+		align-items: center; 
 		max-width: 65ch;
 	}
 
