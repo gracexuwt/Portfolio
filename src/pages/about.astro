@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <BaseLayout title="About | Grace Xu" description="About Grace Xu">
@@ -23,25 +24,36 @@ import Hero from '../components/Hero.astro';
 		<div>
 			<section>
 				<div class="content">
-					<p><a>
-						Welcome! I’m Grace, a Computer Science student at the University of Waterloo. My tech journey began with a passion for developing games, and now I’m interested in expanding my horizons and venturing into artificial intelligence, bioinformatics, and aerospace engineering.
-					</a></p>
+					<p class="v">
+						Welcome! I’m Grace, a Computer Science student at the University of Waterloo. My tech journey began with a passion for developing games, 
+						and now I’m interested in expanding my horizons, such as venturing into AI, bioinformatics, and aerospace engineering.
+					</p>
 					<p>
 						Starting in high school, I gained 3+ years of programming experience with various web and game projects. I enjoyed working with code, and building projects with teams of like-minded people encourage me to improve myself constantly. By honing my skills in multiple programming languages and frameworks, I aspire to craft innovative applications and help revolutionize the future.
-My interest in technology and science also inspired me to delve into machine learning, neural networks, control systems, and aerospace technologies. It is a dream of mine to contribute to AI and humanity’s exploration of the cosmos.
+My interest in technology and science also inspired me to delve into machine learning, control systems, and aerospace technologies. It is a dream of mine to contribute to AI and humanity’s exploration of the cosmos.
+					</p>
+					<p></p>
+					<p>In my spare time, I enjoy creative writing, stargazing, reading (philosophy, history, natural sciences), playing the piano, and going to the gym.
 					</p>
 					<p>
 						My current motivations are to remain curious and open-minded, shape my career through perseverance, and grow as a person. 
 					</p>
-					<p>I am determined to make a meaningful impact. If you would like to discuss new opportunities or have a light-hearted chat, feel free to contact me anytime!</p>
+					<p>I am determined to make a meaningful impact. If you would like to discuss new opportunities or have a light-hearted chat, feel free to contact me anytime.</p>
 				</div>
+				<main class="wrapper stack gap-20 lg:gap-48">
+					<Skills />
+				</main>
 			</section>
+			
 		</main>
 
 	</div>
 </BaseLayout>
 
 <style>
+	.v {
+		color: var(--accent-regular);
+	}
 	p {
 		font-size: 1.5rem;
 		font-weight: bold;
@@ -66,20 +78,23 @@ My interest in technology and science also inspired me to delve into machine lea
 	}
 
 	section {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	color: var(--gray-200);
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+		margin-bottom: 6%;
 	}
 
 	.content {
 		margin-right: 15%;
 		margin-left: 15%;
-	flex: 1; 
-	display: flex;
-	flex-direction: column; 
-	gap: 0.5rem;
+		margin-bottom: 3%;
+		flex: 1; 
+		display: flex;
+		flex-direction: column; 
+		gap: 0.5rem;
+		text-align: justify;
 	}
 
 	.content :global(a) {
@@ -88,7 +103,6 @@ My interest in technology and science also inspired me to delve into machine lea
 		transition: text-decoration-color var(--theme-transition);
 	}
 
-	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}

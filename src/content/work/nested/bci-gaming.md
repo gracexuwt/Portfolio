@@ -2,7 +2,7 @@
 title: BCI Gaming
 publishDate: 2020-03-04 00:00:00
 img: /assets/stock-3.jpg
-img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
+img_alt: Picture of Neorosity headsets used in gathering BCI data
 description: |
   BCI game for a purpose to enter a Neurotech contest for Watolink
 tags:
@@ -17,7 +17,7 @@ duration:
   March 2023 - Ongoing
 ---
 
-#### Watolink
+#### Neurotech Design
 
 Watolink is the University of Waterloo’s Neurotech design team, and our team develops BCI hardware, applications, and sensor technology using EEG signal analysis.
 

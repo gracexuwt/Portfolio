@@ -5,11 +5,8 @@ const currentYear = new Date().getFullYear();
 
 <footer>
 	<div class="group">
-		<p>
-			Designed & Developed in Astro
-			<Icon icon="rocket-launch" size="1.2em" />
-		</p>
 		<p>&copy; {currentYear} Grace Xu</p>
+		<p>gracexuwt1126@gmail.com</p>
 	</div>
 	<p class="socials">
 		<a href="https://www.linkedin.com/in/grace-xu-37ba77237/"><Icon icon="linkedin-logo" /> LinkedIn</a>
@@ -18,6 +15,9 @@ const currentYear = new Date().getFullYear();
 	</p>
 </footer>
 <style>
+	p {
+		font-size: 1.1rem;
+	}
 	footer {
 		display: flex;
 		flex-direction: column;

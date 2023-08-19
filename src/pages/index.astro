@@ -9,12 +9,11 @@ import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Skills from '../components/Skills.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -41,8 +40,8 @@ const projects = (await getCollection('work'))
 
 				<img
 					alt="My universe"
-					width="480"
-					height="620"
+					width="100%"
+					height="auto"
 					src="/assets/portrait.png"
 				/>
 			</header>
@@ -76,7 +75,26 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 
-			
+			<section class="section with-background bg-variant">
+				<div class="about-section">
+				  <div class="about-content">
+					<h3>About</h3>
+					<p>Welcome! I’m Grace, a Computer Science student at the University of Waterloo. My tech journey began with a passion for developing games, 
+						and now I’m interested in expanding my horizons.</p>
+					<p>My current motivations are to remain curious and open-minded, shape my career through perseverance, and grow as a person.</p>
+					<p>If you would like to discuss new opportunities or have a light-hearted chat, feel free to contact me anytime.</p>
+				  </div>
+				  <div class="about-image">
+					<img
+					  alt="Grace in a casual suit"
+					  width="70%"
+					  height="auto"
+					  src="/assets/gracexu.jpg"
+					/>
+				  </div>
+				</div>
+			  </section>
+			<Skills />
 		</main>
 
 		<ContactCTA />
@@ -84,6 +102,49 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
+p {
+	margin-top: 10px;
+	font-size: 1.2rem;
+}
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 80vw; /* Make the section span the full viewport width */
+
+    @media (min-width: 50em) {
+      flex-direction: row;
+    }
+  }
+
+  .about-content {
+    text-align: justify;
+    max-width: 80%;
+    color: var(--gray-300);
+    @media (min-width: 50em) {
+      max-width: 100%; /* Expand max-width on larger screens */
+    }
+  }
+
+  .about-image {
+    width: 80%; /* Adjust the width as needed */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 50em) {
+      order: -1;
+      width: 60%; /* Adjust the width for larger screens */
+    }
+  }
+
+  .about-image img {
+    aspect-ratio: 3 / 4;
+	object-fit: cover;
+    border-radius: 4.5rem;
+  }
 	.fontstyle {
 		color:var(--accent-regular);
 		font-weight: bold;
