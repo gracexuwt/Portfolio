@@ -9,12 +9,11 @@ import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Skills from '../components/Skills.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -30,33 +29,30 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hi, I'm Grace Xu."
+					tagline="I learn, code, and create to turn ideas into real life projects."
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+					<div class="typewriter">
+						<a class="fontstyle">Software engineer. Web & Game developer. Digital designer.</a>
 					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
+					alt="My universe"
+					width="100%"
+					height="auto"
+					src="/assets/portrait.png"
 				/>
 			</header>
 
-			<Skills />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>My Projects</h3>
+					<p>Have a look at some of my featured works!</p>
 				</header>
 
 				<div class="gallery">
@@ -80,26 +76,25 @@ const projects = (await getCollection('work'))
 			</section>
 
 			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to recieve praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
+				<div class="about-section">
+				  <div class="about-content">
+					<h3>About</h3>
+					<p>Welcome! I’m Grace, a Computer Science student at the University of Waterloo. My tech journey began with a passion for developing games, 
+						and now I’m interested in expanding my horizons.</p>
+					<p>My current motivations are to remain curious and open-minded, shape my career through perseverance, and grow as a person.</p>
+					<p>If you would like to discuss new opportunities or have a light-hearted chat, feel free to contact me anytime.</p>
+				  </div>
+				  <div class="about-image">
+					<img
+					  alt="Grace in a casual suit"
+					  width="70%"
+					  height="auto"
+					  src="/assets/gracexu.jpg"
+					/>
+				  </div>
 				</div>
-			</section>
+			  </section>
+			<Skills />
 		</main>
 
 		<ContactCTA />
@@ -107,6 +102,80 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
+p {
+	margin-top: 10px;
+	font-size: 1.2rem;
+}
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 80vw; /* Make the section span the full viewport width */
+
+    @media (min-width: 50em) {
+      flex-direction: row;
+    }
+  }
+
+  .about-content {
+    text-align: justify;
+    max-width: 80%;
+    color: var(--gray-300);
+    @media (min-width: 50em) {
+      max-width: 100%; /* Expand max-width on larger screens */
+    }
+  }
+
+  .about-image {
+    width: 80%; /* Adjust the width as needed */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 50em) {
+      order: -1;
+      width: 60%; /* Adjust the width for larger screens */
+    }
+  }
+
+  .about-image img {
+    aspect-ratio: 3 / 4;
+	object-fit: cover;
+    border-radius: 4.5rem;
+  }
+	.fontstyle {
+		color:var(--accent-regular);
+		font-weight: bold;
+	}
+	.typewriter {
+		overflow: hidden;
+		white-space: nowrap;
+		border-right: 0.15em solid var(--accent-regular);
+		font-size: 91%;
+		animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+		animation-fill-mode: forwards; /* Keeps the last frame of typing animation */
+	}
+
+	@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+	}
+
+	@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: var(--accent-regular);
+	}
+	}
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -123,9 +192,17 @@ const projects = (await getCollection('work'))
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		animation: floating 3s ease-in-out infinite;
 	}
 
+	@keyframes floating {
+		0%, 100% {
+		transform: translateY(0);
+		}
+		50% {
+		transform: translateY(20px);
+		}
+	}
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
@@ -145,6 +222,7 @@ const projects = (await getCollection('work'))
 			border-radius: 4.5rem;
 			object-fit: cover;
 		}
+		
 	}
 
 	/* ====================================================== */
@@ -223,28 +301,6 @@ const projects = (await getCollection('work'))
 
 		.cta {
 			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
 		}
 	}
 </style>
