@@ -16,6 +16,8 @@ duration:
   January 2023 - January 2023
 ---
 
+> React jumpstart, fun learning
+
 Simple calculator application bootstrapped with Create React App.
 	
 I developed React components to build a functioning calculator with simple operations, and used predefined NPM components.

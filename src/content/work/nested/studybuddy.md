@@ -16,6 +16,8 @@ duration:
   December 2022 - January 2023
 ---
 
+> Study with Starry, your friendly study partner
+
 StudyBuddy is a studying tool that assists learners in becoming more productive and motivated.
 
 Together with a friend, I designed and developed the learning application to help us keep focus while studying. I was involved in all stages of web development, including frontend UI design and Javascript backend. Specifically, I designed and programmed the pomodoro timer, stopwatch, and event calendar. After deployment of the website, I tested the functions and addressed several run-time bugs regarding the pomodoro timer session changes, calendar date, and server issues.

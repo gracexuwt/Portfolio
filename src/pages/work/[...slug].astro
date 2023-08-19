@@ -30,7 +30,7 @@ const { Content } = await entry.render();
 	<div class="stack gap-20">
 		<div class="wrapper stack gap-15">
 			<header>
-				<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
+				<a class="back-link" href="/work/"><Icon icon="arrow-left" /> All Projects</a>
 				<Hero title={entry.data.title} align="start">
 					<div class="details">
 						<div class="tags">
@@ -67,6 +67,8 @@ const { Content } = await entry.render();
 
 	.back-link {
 		display: none;
+		font-size: 1.5rem;
+		font-weight: bold;
 	}
 
 	.details {
@@ -117,8 +119,6 @@ const { Content } = await entry.render();
 		margin-bottom: 10px;
 	}
 	.content {
-		justify-content: center; 
-		align-items: center; 
 		max-width: 65ch;
 	}
 
