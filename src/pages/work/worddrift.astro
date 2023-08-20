@@ -1,65 +1,80 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 
-interface Props {
-	entry: CollectionEntry<'work'>;
-}
-
-// This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
-// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
-export async function getStaticPaths() {
-	const work = await getCollection('work');
-	return work.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
-}
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout title="WordDrift" description="A word matching game made for a school project">
 	<div class="stack gap-20">
 		<div class="wrapper stack gap-15">
 			<header>
 				<a class="back-link" href="/work/"><Icon icon="arrow-left" /> All Projects</a>
-				<Hero title={entry.data.title} align="start">
+				<Hero title="WordDrift" align="start">
 					<div class="details">
 						<div class="tags">
-							{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+							<Pill>Design</Pill>
+							<Pill>Game Dev</Pill>
 						</div>
-						<p class="description">{entry.data.description}</p>
+						<p class="description">A word matching game made for a school project</p>
 					</div>
 				</Hero>
 			</header>
 			<main class="main">
 				<div>
 					<div class="img-container">
-					  {entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					  <img src="/assets/p5.jpg" alt="WordDrift Game Menu"/>
 					</div>
 					<div class="new-section">
-					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">{entry.data.tech_stack}</a></div>
-					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">{entry.data.duration}</a></div>
-					  <div><a class="bolden">Links: </a></div><div class="gap"><a href={entry.data.link} class="regular"><Icon icon='github-logo'/>GitHub</a></div>
+					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">Greenfoot Java</a></div>
+					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">November 2021 - November 2021</a></div>
+					  <div><a class="bolden">Links: </a></div><div class="gap"><a href="https://github.com/jakezcanada/P3D-WordDrift" class="regular"><Icon icon='github-logo'/>GitHub</a></div>
 					</div>
 				  </div>
-				<div class="content">
-					<Content />
-				</div>
+				<div class="content"><p>
+					WordDrift is a scrambled word game where you shift the columns of letters up and down to form dictionary words. There are four levels: beginner, moderate, expert, and impossible.
+
+<br> <p class="hr-lines">Instructions</p>
+In the game you will spell out words in the highlighted column by shifting the letter tiles. Once you find a word, the letter tiles will turn yellow. Find all the words and finish the board.
+
+<br>
+To beat the game, find all words that could be constructed and earn all achievements!</div>
 			</main>
 		</div>
 	</div>
 </BaseLayout>
 
 <style>
+	.hr-lines{
+	position: relative;
+	max-width: 100%;
+	text-align: center;
+	font-weight: bold;
+	}
+
+	.hr-lines:before{
+	content:" ";
+	height: 8%;
+	width: 35%;
+	background: var(--accent-regular);
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	}
+
+	.hr-lines:after{
+	content:" ";
+	height: 8%;
+	width: 35%;
+	background: var(--accent-regular);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	}
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
