@@ -1,7 +1,7 @@
 ---
 title: Crystal Adventure RPG
 publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
+img: /portfolio/assets/stock-1.jpg
 img_alt: Crystal Adventure ingame screenshot of rescue centre
 description: |
   A relaxing animal rescue RPG game

@@ -1,7 +1,7 @@
 ---
 title: WordDrift
 publishDate: 2019-10-02 00:00:00
-img: /assets/p5.jpg
+img: /portfolio/assets/p5.jpg
 img_alt: WordDrift Game Menu
 description: |
   A word matching game made for a school project
