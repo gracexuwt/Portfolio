@@ -1,7 +1,7 @@
 ---
 title: StudyBuddy Web App
 publishDate: 2019-12-01 00:00:00
-img: /portfolio/assets/stock-2.jpg
+img: /assets/stock-2.jpg
 img_alt: Studybuddy Web App Interface
 description: |
   Personal project that assists with efficient and effective learning

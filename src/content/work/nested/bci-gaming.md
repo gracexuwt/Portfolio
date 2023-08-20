@@ -1,7 +1,7 @@
 ---
 title: BCI Gaming
 publishDate: 2020-03-04 00:00:00
-img: /portfolio/assets/stock-3.jpg
+img: /assets/stock-3.jpg
 img_alt: Picture of Neorosity headsets used in gathering BCI data
 description: |
   BCI game for a purpose to enter a Neurotech contest for Watolink

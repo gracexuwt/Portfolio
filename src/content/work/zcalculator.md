@@ -1,7 +1,7 @@
 ---
 title: Calculator App
 publishDate: 2019-10-02 00:00:00
-img: /portfolio/assets/stock-4.jpg
+img: /assets/stock-4.jpg
 img_alt: Calculator app UI
 description: |
   Personal project to learn REACT
