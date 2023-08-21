@@ -159,9 +159,10 @@ p {
 		overflow: hidden;
 		white-space: nowrap;
 		border-right: 0.15em solid var(--accent-regular);
-		font-size: 91%;
+		font-size: 88%; 
 		animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-		animation-fill-mode: forwards; /* Keeps the last frame of typing animation */
+		animation-fill-mode: forwards;
+		max-width: 100%; 
 	}
 
 	@keyframes typing {
@@ -169,7 +170,7 @@ p {
 		width: 0;
 	}
 	to {
-		width: 100%;
+		width: 99%;
 	}
 	}
 
@@ -194,7 +195,7 @@ p {
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 3 / 4;
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
@@ -225,7 +226,7 @@ p {
 
 		.hero img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
+			border-radius: 1.5rem;
 			object-fit: cover;
 		}
 		
