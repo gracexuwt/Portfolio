@@ -94,7 +94,12 @@ My interest in technology and science also inspired me to delve into machine lea
 		display: flex;
 		flex-direction: column; 
 		gap: 0.5rem;
-		text-align: justify;
+		text-align: left;
+	}
+	@media (min-width: 50em) {
+		.content {
+			text-align: justify;
+		}
 	}
 
 	.content :global(a) {
