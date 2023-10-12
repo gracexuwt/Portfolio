@@ -15,10 +15,11 @@ import Pill from '../../components/Pill.astro';
 				<Hero title="Calculator App" align="start">
 					<div class="details">
 						<div class="tags">
+							<Pill>Data Processing</Pill>
 							<Pill>Design</Pill>
 							<Pill>Web Dev</Pill>
 						</div>
-						<p class="description">Personal project to learn REACT</p>
+						<p class="description">NASA Space Apps 2023 Submission for Challenge: Immersed in the Sounds of Space</p>
 					</div>
 				</Hero>
 			</header>
@@ -28,17 +29,37 @@ import Pill from '../../components/Pill.astro';
 					  <img src="/assets/stock-4.jpg" alt="Calculator app UI"/>
 					</div>
 					<div class="new-section">
-					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">React, JavaScript, Node.js, HTML5, CSS</a></div>
-					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">January 2023 - January 2023</a></div>
-					  <div><a class="bolden">Links: </a></div><div class="gap"><a href="https://github.com/gracexuwt/calculator-app" class="regular"><Icon icon='github-logo'/>GitHub</a></div>
+					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">Python(PyDub, MoviePy, matplotlib, etc), Astronify, Audiolazy, Astro TypeScript, Tailwind CSS, Vercel</a></div>
+					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">2023 October 7-8</a></div>
+					  <div><a class="bolden">Links: </a></div><div class="gap"><a href="https://github.com/SuperSonicNASA" class="regular"><Icon icon='github-logo'/>GitHub</a>
+						<a href="https://web-app-symphonies-beyond-earth.vercel.app" class="regular">Web App Demo</a></div>
 					</div>
 				  </div>
 				<div class="content"><p>
-					<h4 color="var(--accent-regular)">My React jumpstart</h4> 
+					<h4 color="var(--accent-regular)">SuperSonic - Symphonies Beyond Earth</h4> 
 
-Simple calculator application bootstrapped with Create React App.
-<br>	
-I developed React components to build a functioning calculator with simple operations, and used predefined NPM components.</div>
+					Our project is an ambitious educational initiative that aims to introduce 
+					sonification as a novel concept and strives to establish the interconnectedness 
+					between human beings and infinite space. We have developed a system of sonification 
+					that translates galaxial 3D and 2D data into a plethora of sounds. Then, we applied them 
+					to a web application that presented them in a visually captivating manner. Simulating 
+					space travel from the earth to outer space for our users, we start from Earth and as 
+					the ‘travelers’ scroll down, they will be able to ‘visit’ the space images of their choices 
+					to experience the symphonies the space data can produce by the process of sonification.
+				<br/><br/>
+				<br><p class="hr-lines"> Data Sonification Methodology</p><br>
+				In Python, loop through each column of pixels within the image, then depending on whether the image is RGB/RGBA, or grayscale, we calculate the average R, G, B values of the column:<br/>
+				1. If the mode of the image is RGB or RGBA, we use PIL’s getpixel function to assign r, g, b to the corresponding RGB value<br/>
+				2. If the mode of the image is grayscale, we assign to r, g, b the same grayscale value.<br/>
+				Calculating the average of r, g, and b, then turning those averages into pitch<br/>
+				Using the equation pitch = (red + blue + green)/10, we derive a pitch from the average RGB value of each column.<br/>
+				The reason why we used this equation is that, through various experiments, the resultant pitch would produce the best, most soothing sound to the ears, while still maintaining the effect of the change in RGB on the audible sound.<br/>
+				
+				<br/>
+				With the pitch produced, we derive certain notes using: note = base_frequency * (semitone_ratio ** pitch) (Where: Semitone_ratio = 2 ** (1 / 12), Sase_frequency = 130.81 (C3 frequency in Hz)<br/>
+				Using the notes, we plug it into a few sine waves to complicate the waveforms in order to produce a more intriguing pattern of sound. From this, we produce an audio using Pydub.<br/>
+				Performing the same sweeping method from left to right with the animation using moviepy.editor, and syncing the sound up with the sweeping motion through Pydub.<br/>
+				Finally, add the existing audio into the video using AudioSegment of Pydub and export the product.</div>
 			</main>
 		</div>
 	</div>
