@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import Hero from '../../components/Hero.astro';
+import Icon from '../../components/Icon.astro';
+import Pill from '../../components/Pill.astro';
+
+---
+
+<BaseLayout title="RAIInet C++ Game" description="C++ Project to enhance OOP principles">
+	<div class="stack gap-20">
+		<div class="wrapper stack gap-15">
+			<header>
+				<a class="back-link" href="/work/"><Icon icon="arrow-left" /> All Projects</a>
+				<Hero title="Raiinet" align="start">
+					<div class="details">
+						<div class="tags">
+							<Pill>Design</Pill>
+							<Pill>Game Dev</Pill>
+							<Pill>XWindow Graphics</Pill>
+						</div>
+						<p class="description">Game that applies Object-Oriented Programming concepts, CS246 Group Project</p>
+					</div>
+				</Hero>
+			</header>
+			<main class="main">
+				<div>
+					<div class="img-container">
+					  <img src="/assets/p6.JPG" alt="RAIInet C++ Interface"/>
+					</div>
+					<div class="new-section">
+					  <div><a class="bolden">Tech Stack: </a></div><div class="gap"><a class="regular">C++, XWindow, PuTTY</a></div>
+					  <div><a class="bolden">Duration: </a></div><div class="gap"><a class="regular">Dec 2023</a></div>
+					  <div><a class="bolden">Links: </a></div><div class="gap"><a href="https://youtu.be/8do4wPE-dgE?si=tEOfuK_yHrMAaXBK" class="regular"><Icon icon='youtube-logo'/>Demo</a></div>
+					</div>
+				  </div>
+				<div class="content"><p>
+                    RAIInet is a multiplayer game played on a 8x8 board between two players who each control
+eight pieces called links. We constructed the overall structure around this basic 8x8 grid by adding
+elements, the displays, and abilities, where elements are the pieces in the game - Server port, Firewall,
+Data, and Virus. Then, these features are linked together with the Game class. The main classes
+that drive the game are Game and Player, which respectively owns the board and the elements. 
+<br><p class="hr-lines"> Object-Oriented Principles and Design Patterns</p><br>
+For the design patterns, we used MVC(Model-View-Controller) pattern, Observer pattern, and Iterator pattern.
+<br>
+Encapsulation: We enforce invariants by using encapsulation. Clients(players) would access
+and interact with the game through the commands in main.cc. Otherwise, the specific
+implementations of the game logistics as well as the information stored in Game, Board, and
+Player would be inaccessible to the clients.
+<br>Abstraction: Observer, Element, and Link are abstract classes that assists with encapsulation
+of unnecessary details stored in the classes, and they are generally inaccessible by neither
+Game or Player. By using abstraction, modular design would be supported, which makes the
+code more organised and manageable. 
+<br>Inheritance: For Observer and Element, we used inheritance so that subclasses Serverport,
+Firewall and Link could access its superclass Element’s fields. Then, classes Data and Virus
+also inherit from Link. By using inheritance, we improve the reusability of our code and
+increase convenience in case we want to add extra classes that use a common interface.
+<br>Polymorphism: Following from inheritance and abstraction, each subclass like Serverport,
+Firewall, and Link would have different underlying data fields but the same method, except
+the method would vary a bit for each class based on polymorphism. This is overriding.  Other than that, we used operator overloading
+for Board and TextDisplay.
+				</div>
+			</main>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.hr-lines{
+	position: relative;
+	max-width: 100%;
+	text-align: center;
+	font-weight: bold;
+	}
+
+	.hr-lines:before{
+	content:" ";
+	height: 8%;
+	width: 20%;
+	background: var(--accent-regular);
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	}
+
+	.hr-lines:after{
+	content:" ";
+	height: 8%;
+	width: 20%;
+	background: var(--accent-regular);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	}
+	header {
+		padding-bottom: 2.5rem;
+		border-bottom: 1px solid var(--gray-800);
+	}
+
+	.back-link {
+		display: none;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem;
+		gap: 1.5rem;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.tags {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.description {
+		font-size: var(--text-lg);
+		max-width: 54ch;
+	}
+
+	.main {
+	display: flex;
+	align-items: flex-start;
+	}
+	.bolden {
+		color: var(--gray-200);
+		font-weight: bold;
+	}
+	.regular {
+		color: var(--accent-regular);
+	}
+	.new-section {
+		top: 20%;
+		flex: 1; 
+		width: 95%;
+	}
+	.img-container {
+		display: grid;
+		justify-content: center; 
+		align-items: center; 
+		width: 93%;
+		height: 93%; 
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	.gap {
+		margin-bottom: 10px;
+	}
+	.content {
+		max-width: 65ch;
+	}
+
+	.content > :global(* + *) {
+		margin-top: 1rem;
+	}
+
+	.content :global(h1),
+	.content :global(h2),
+	.content :global(h3),
+	.content :global(h4),
+	.content :global(h5) {
+		margin: 1.5rem 0;
+	}
+
+	.content :global(img) {
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-sm);
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+	}
+
+	.content :global(blockquote) {
+		font-size: var(--text-lg);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 1.1;
+		padding-inline-start: 1.5rem;
+		border-inline-start: 0.25rem solid var(--accent-dark);
+		color: var(--gray-0);
+	}
+
+	.back-link,
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.back-link:hover,
+	.back-link:focus,
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.back-link {
+			display: block;
+			align-self: flex-start;
+		}
+
+		.details {
+			flex-direction: row;
+			gap: 2.5rem;
+		}
+
+		.content :global(blockquote) {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
